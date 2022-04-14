@@ -1,0 +1,23 @@
+export-plot data (NetLogo 6.2.2),,,,,,,,,,,,,,,,,,,,,,,
+DissertationPreySimulation.nlogo,,,,,,,,,,,,,,,,,,,,,,,
+04/12/2022 15:59:57:075 +0100,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+MODEL SETTINGS,,,,,,,,,,,,,,,,,,,,,,,
+max-align-turn1,crossoverrate,vision-distance,max-separate-turn,predator-hit-threshold,predator-vision-cone,predator-population,max-predator-turn,prey1,stablepopulation,predator-vision-distance,cycletime,max-predator-speed,prey2,prey3,group-threshold-distance,predator-input-value,vision-cone,minimum-separation1,turning-noise,speed,max-cohere-turn1,predator-intro-delay,threshold-for-facing-same-way
+0,0.5,13,4.5,0.5,135,15,7,1,TRUE,19,1500,0.165,4,2,6,10,178,2.5,2.1,0.013,90,50,45
+,,,,,,,,,,,,,,,,,,,,,,,
+"""Catching Tracker""",,,,,,,,,,,,,,,,,,,,,,,
+x min,x max,y min,y max,autoplot?,current pen,legend open?,number of pens,,,,,,,,,,,,,,,,
+0,6,0,21800,TRUE,"""none""",TRUE,6,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+pen name,pen down?,mode,interval,color,x,,,,,,,,,,,,,,,,,,
+"""none""",TRUE,1,1,6,0,,,,,,,,,,,,,,,,,,
+"""solitary""",TRUE,1,1,113,1,,,,,,,,,,,,,,,,,,
+"""trailing""",TRUE,1,1,44,2,,,,,,,,,,,,,,,,,,
+"""unaligned""",TRUE,1,1,0,3,,,,,,,,,,,,,,,,,,
+"""leading""",TRUE,1,1,104,4,,,,,,,,,,,,,,,,,,
+"""middle""",TRUE,1,1,64,5,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
+"""none""",,,,"""solitary""",,,,"""trailing""",,,,"""unaligned""",,,,"""leading""",,,,"""middle""",,,
+x,y,color,pen down?,x,y,color,pen down?,x,y,color,pen down?,x,y,color,pen down?,x,y,color,pen down?,x,y,color,pen down?
+0,25,6,TRUE,1,19785,113,TRUE,2,1915,44,TRUE,3,1750,0,TRUE,4,2955,104,TRUE,5,3571,64,TRUE
