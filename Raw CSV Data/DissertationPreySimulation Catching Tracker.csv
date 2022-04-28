@@ -1,0 +1,23 @@
+"export-plot data (NetLogo 6.2.2)"
+"DissertationPreySimulation.nlogo"
+"04/26/2022 13:57:42:679 +0100"
+
+"MODEL SETTINGS"
+"max-align-turn1","crossoverrate","vision-distance","predator-hit-threshold","max-separate-turn","predator-vision-cone","predator-population","prey1","max-predator-turn","max-predator-speed","cycletime","stablepopulation","predator-vision-distance","prey2","prey3","group-threshold-distance","predator-input-value","vision-cone","minimum-separation1","turning-noise","speed","max-cohere-turn1","predator-intro-delay","threshold-for-facing-same-way"
+"3","0.5","13","0.5","3","135","15","4","7","0.165","3000","true","19","1","2","5.73","10","178","2.5","2.1","0.007","3","100","45"
+
+"""Catching Tracker"""
+"x min","x max","y min","y max","autoplot?","current pen","legend open?","number of pens"
+"0","6","0","16700","true","""none""","true","6"
+
+"pen name","pen down?","mode","interval","color","x"
+"""none""","true","1","1","6","0"
+"""solitary""","true","1","1","113","1"
+"""trailing""","true","1","1","44","2"
+"""unaligned""","true","1","1","0","3"
+"""leading""","true","1","1","104","4"
+"""middle""","true","1","1","64","5"
+
+"""none""",,,,"""solitary""",,,,"""trailing""",,,,"""unaligned""",,,,"""leading""",,,,"""middle"""
+"x","y","color","pen down?","x","y","color","pen down?","x","y","color","pen down?","x","y","color","pen down?","x","y","color","pen down?","x","y","color","pen down?"
+"0","0","6","true","1","15203","113","true","2","2952","44","true","3","770","0","true","4","5212","104","true","5","5863","64","true"
