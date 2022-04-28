@@ -57,11 +57,11 @@ def getPValue(observation1,observation2, total1, total2):
 
     return p_value
 
-##for i in range(0, len(allData)):
-##    print(typesList[i])
-##    print("{0} vs {1} P Value: {2}".format(namesList[0], namesList[1], getPValue(allData[i][0], allData[i][1], totalsData[0], totalsData[1])))
-##    print("{0} vs {1} P Value: {2}".format(namesList[0], namesList[2], getPValue(allData[i][0], allData[i][2], totalsData[0], totalsData[2])))
-##    print("{0} vs {1} P Value: {2}".format(namesList[2], namesList[1], getPValue(allData[i][2], allData[i][1], totalsData[2], totalsData[1])))
+for i in range(0, len(allData)):
+    print(typesList[i])
+    print("{0} vs {1} P Value: {2}".format(namesList[0], namesList[1], getPValue(allData[i][0], allData[i][1], totalsData[0], totalsData[1])))
+    print("{0} vs {1} P Value: {2}".format(namesList[0], namesList[2], getPValue(allData[i][0], allData[i][2], totalsData[0], totalsData[2])))
+    print("{0} vs {1} P Value: {2}".format(namesList[2], namesList[1], getPValue(allData[i][2], allData[i][1], totalsData[2], totalsData[1])))
 
 def getShuffleMeans(observation1, total1, shuffles):
     x = [1] * observation1
