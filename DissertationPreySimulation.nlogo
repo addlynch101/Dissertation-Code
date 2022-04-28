@@ -91,19 +91,19 @@ to setup
   create-type1s prey1                  ;; this creates the number of this type set by the slider.
   [
       right random-float 360.0         ;; random orientation at start
-      setxy (-19 + random-float 39) (-19 + random-float 39)      ;; random positions at start between particular coordinates
+      setxy (-19 + random-float 10) (-19 + random-float 10)      ;; random positions at start between particular coordinates
       set color red
     ]
   create-type2s prey2
   [
       right random-float 360.0         ;; random orientation at start
-      setxy (-19 + random-float 39) (-19 + random-float 39)      ;; random positions at start between particular coordinates
+      setxy (-19 + random-float 10) (-19 + random-float 10)      ;; random positions at start between particular coordinates
       set color orange
     ]
     create-type3s prey3
   [
       right random-float 360.0         ;; random orientation at start
-      setxy (-19 + random-float 39) (-19 + random-float 39)      ;; random positions at start between particular coordinates
+      setxy (-19 + random-float 10) (-19 + random-float 10)      ;; random positions at start between particular coordinates
       set color green
     ]
 
@@ -155,7 +155,7 @@ to go
   ]
   ]
 
-  if (ticks mod 100) = 0 [ask one-of preyTypes [class-prey-random-polling]] ;Random Sampling of individual types
+  if (ticks mod 100) = 0 and not (ticks < predator-intro-delay) [ask one-of preyTypes [class-prey-random-polling]] ;Random Sampling of individual types
 
   if ticks >= predator-intro-delay [
     ask predators [getpredatorview]
@@ -199,19 +199,19 @@ to endOfCycle
   set-default-shape turtles "default"
   create-type1s prey1                  ;; this creates the number of this type set by the slider.
   [   right random-float 360.0         ;; random orientation at start
-      setxy (-19 + random-float 39) (-19 + random-float 39)      ;; random positions at start between particular coordinates
+      setxy (-19 + random-float 10) (-19 + random-float 10)      ;; random positions at start between particular coordinates
       set color red
     ]
   create-type2s prey2
   [
       right random-float 360.0         ;; random orientation at start
-      setxy (-19 + random-float 39) (-19 + random-float 39)      ;; random positions at start between particular coordinates
+      setxy (-19 + random-float 10) (-19 + random-float 10)      ;; random positions at start between particular coordinates
       set color orange
     ]
     create-type3s prey3
   [
       right random-float 360.0         ;; random orientation at start
-      setxy (-19 + random-float 39) (-19 + random-float 39)     ;; random positions at start between particular coordinates
+      setxy (-19 + random-float 10) (-19 + random-float 10)     ;; random positions at start between particular coordinates
       set color green
     ]
   create-tick_counter 1
@@ -301,10 +301,13 @@ end
 
 to find-flockmates  ;; turtle procedure
   set flockmates (other type12s in-cone vision-distance vision-cone)      ;; type12s are follower and leader types, this is where the followers ignore the asocial individuals
+  ;ask flockmates [
+  ;  create-link-from myself ;;Code to visualise what the social prey can see, commented out for final version
+  ;]
 end
 
 to find-nearest-neighbors1 ;; turtle procedure
-  set nearest-neighbors (turtles in-radius minimum-separation1) with [self != myself]
+  set nearest-neighbors (preyTypes in-radius minimum-separation1) with [self != myself]
 end
 
 to find-nearest-neighbor ;; turtle procedure
@@ -561,7 +564,7 @@ prey1
 prey1
 0
 4
-1.0
+4.0
 1
 1
 NIL
@@ -576,7 +579,7 @@ max-separate-turn
 max-separate-turn
 0
 40
-4.5
+3.0
 0.5
 1
 degrees
@@ -606,7 +609,7 @@ speed
 speed
 0
 0.1
-0.013
+0.007
 0.001
 1
 NIL
@@ -633,7 +636,7 @@ INPUTBOX
 114
 487
 max-align-turn1
-0.0
+3.0
 1
 0
 Number
@@ -644,7 +647,7 @@ INPUTBOX
 113
 561
 max-cohere-turn1
-90.0
+3.0
 1
 0
 Number
@@ -658,7 +661,7 @@ prey2
 prey2
 0
 10
-4.0
+1.0
 1
 1
 NIL
@@ -796,11 +799,11 @@ NIL
 HORIZONTAL
 
 TEXTBOX
-621
-454
-771
-482
-Set these 5 values before setup
+623
+446
+773
+488
+Set these 5 values before setup as they are used to initialise python variables
 11
 0.0
 1
@@ -829,7 +832,7 @@ cycleTime
 cycleTime
 100
 5000
-1500.0
+3000.0
 100
 1
 NIL
@@ -904,7 +907,7 @@ predator-intro-delay
 predator-intro-delay
 0
 100
-50.0
+100.0
 5
 1
 ticks
@@ -962,11 +965,11 @@ NIL
 1
 
 TEXTBOX
-249
+241
 329
-399
+391
 347
-red
+Social: red
 11
 0.0
 1
@@ -975,8 +978,8 @@ TEXTBOX
 247
 366
 397
-384
-orange\n
+394
+Leaders:\norange\n
 11
 0.0
 1
@@ -985,8 +988,8 @@ TEXTBOX
 245
 405
 395
-423
-green\n
+433
+Asocial:\ngreen\n
 11
 0.0
 1
@@ -1005,14 +1008,14 @@ stablePopulation
 SLIDER
 721
 364
-915
+922
 397
 group-threshold-distance
 group-threshold-distance
 0
 10
-6.0
-0.5
+5.73
+0.01
 1
 NIL
 HORIZONTAL
@@ -1060,7 +1063,7 @@ PLOT
 455
 1314
 768
-Caputure Time Random Selection
+Caputure Time Selection
 NIL
 NIL
 0.0
